@@ -33,7 +33,7 @@ pipeline {
         
         stage('Deploy to production') {
             when { 
-                tag "release-*"
+                tag "*-release"
             }
             
             steps {
