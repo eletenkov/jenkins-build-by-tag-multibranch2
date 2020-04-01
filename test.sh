@@ -21,7 +21,7 @@ echo "master / commit 2" > file.txt
 git add file.txt
 git commit -m "Added commit 2"
 git push
-git tag release-0.2.0 HEAD
+git tag 0.2.0-release HEAD
 git push --tags
 # Expected result in build: "master / commit 2"
 
@@ -41,7 +41,7 @@ echo "test4 / commit 3" > file.txt
 git add file.txt
 git commit -m "Added commit 3"
 git push --set-upstream origin test4
-git tag release-0.4.0 HEAD
+git tag 0.4.0-release HEAD
 git push --tags
 # Expected result in build: "test4 / commit 3"
 
@@ -59,7 +59,7 @@ git tag -d release-0.2.0
 git tag -d 0.3.0
 git tag -d release-0.4.0
 git push --delete origin 0.1.0
-git push --delete origin release-0.2.0
+git push --delete origin 0.2.0-release
 git push --delete origin 0.3.0
-git push --delete origin release-0.4.0
+git push --delete origin 0.4.0-release
 
