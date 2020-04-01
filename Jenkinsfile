@@ -22,12 +22,18 @@ pipeline {
                 echo 'make test'
             }
         }
-        stage('Deploy') {
+        stage('Deploy to staging') {
+            when { 
+                branch "master"
+            }
+            steps {
+                echo 'Deploying only because this commit is branch...'
+            }
+        }
+        
+        stage('Deploy to production') {
             when { 
                 tag "release-*"
-                anyOf{
-                    branch "master"
-                }
             }
             steps {
                 echo 'Deploying only because this commit is tagged...'
