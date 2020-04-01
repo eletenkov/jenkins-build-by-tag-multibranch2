@@ -55,9 +55,9 @@ git push -f
 git branch -D test4
 git push origin --delete test4
 git tag -d 0.1.0
-git tag -d release-0.2.0
+git tag -d 0.2.0-release
 git tag -d 0.3.0
-git tag -d release-0.4.0
+git tag -d 0.4.0-release
 git push --delete origin 0.1.0
 git push --delete origin 0.2.0-release
 git push --delete origin 0.3.0
