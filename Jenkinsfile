@@ -12,7 +12,12 @@ pipeline {
             }
         }
         stage('Deploy') {
-            when { tag "release-*" }
+            when {
+                tag 'release-*'
+                anyOf {
+                    branch 'master'
+                }
+            }
             steps {
                 echo 'Deploying only because this commit is tagged...'
             }
