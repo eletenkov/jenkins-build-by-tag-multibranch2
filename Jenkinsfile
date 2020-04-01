@@ -35,8 +35,11 @@ pipeline {
             when { 
                 tag "release-*"
             }
+            
             steps {
                 echo 'Deploying only because this commit is tagged...'
+                echo "Building $BRANCH_NAME"
+                echo "Building $TAG_NAME"
             }
         }
     }
